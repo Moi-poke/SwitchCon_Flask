@@ -3,12 +3,12 @@ from base_camera import BaseCamera
 
 
 class Camera(BaseCamera):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, camera_id):
+        super(Camera, self).__init__(camera_id)
 
     @staticmethod
-    def frames():
-        camera = cv2.VideoCapture(4)
+    def frames(camera_id=0):
+        camera = cv2.VideoCapture(camera_id)
         camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
         camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
         if not camera.isOpened():

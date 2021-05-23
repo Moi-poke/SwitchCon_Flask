@@ -13,8 +13,8 @@ from camera import Camera
 
 app = Flask(__name__)
 
-button = ["Y", "B", "A", "X"]
-Buttons = [4, 8, 16, 32]
+button = ["Y", "B", "A", "X", "L", "R", "ZL", "ZR", "MINUS", "PLUS", "LCLICK", "RCLICK", "HOME", "CAPTURE"]
+Buttons = [2 ** (i + 2) for i in range(14)]
 
 # シリアル接続
 ser = serial.Serial("COM3", 9600)
